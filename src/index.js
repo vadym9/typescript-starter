@@ -14,9 +14,9 @@ async function doSmth() {
   await console.log(123);
 }
 
-doSmth()
+doSmth();
 
-let {j,b} = {j:2, k:3}
+const { j, b } = { j: 2, k: 3 };
 console.log(j);
 
 module.hot.accept();
