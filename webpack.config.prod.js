@@ -8,10 +8,11 @@ const webpack = require('webpack')
 
 
 module.exports = {
-  entry: './src/index.jsx',
+  entry: './src/index.js',
   output: {
     path: path.join(__dirname, '/dist'),
     filename: 'index_bundle.js',
+    // sourceMapFilename: "[name].js.map"
   },
 
   module: {
@@ -67,12 +68,21 @@ module.exports = {
       filename: '[name].css',
       // chunkFilename:"[id].css"
     }),
-
+ 
     new webpack.HotModuleReplacementPlugin()
   ],
 
-  devServer:{
-      contentBase: './dist',
-      hot:true
+  // devServer:{
+  //     contentBase: './dist',
+  //     hot:true
+  // },
+
+  // devtool:'source-map',
+
+  optimization:{
+    runtimeChunk:{
+      name: entrypoint => `runtime~${entrypoint.name}`
+    }
   }
+
 };
