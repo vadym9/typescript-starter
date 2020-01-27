@@ -6,6 +6,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack')
 
+console.log(env);
+
 
 module.exports = {
   entry: './src/index.js',
@@ -14,7 +16,7 @@ module.exports = {
     filename: 'index_bundle.js',
     // sourceMapFilename: "[name].js.map"
   },
-
+  
   module: {
     rules: [
       {
