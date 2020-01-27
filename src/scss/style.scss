@@ -1,16 +1,32 @@
-@import './utils/libs.scss';
-@import './utils/vars.scss';
-@import './utils/mixins.scss';
+@font-face {
+    font-family: 'icomoon';
+    src: url('fonts/icomoon.eot?lfyq3x');
+    src: url('fonts/icomoon.eot?lfyq3x#iefix') format('embedded-opentype'),
+      url('fonts/icomoon.ttf?lfyq3x') format('truetype'),
+      url('fonts/icomoon.woff?lfyq3x') format('woff'),
+      url('fonts/icomoon.svg?lfyq3x#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
 
 h1{
     color: red;
+    font-family: 'icomoon';
+    &:before{
+        content:'\e901'
+    }
 }
 
 h2{
     color: red;
+    
 }
 div { 
     display: flex;
     border-radius: 8px;
     text-emphasis: none;
 }
+
+
+

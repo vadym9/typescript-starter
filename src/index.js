@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
 import './scss/style.scss';
+// import "./img/user.png"
 // working polyfill with importing like that
 // require('core-js/stable')
 // require('regenerator-runtime/runtime')
