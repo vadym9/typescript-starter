@@ -43,6 +43,7 @@ module.exports = (env) => {
           test: /\.(js|jsx)$/,
           exclude: /node_modules/,
           use: ['babel-loader', 'eslint-loader'],
+
           // use: {
 
           //     loader: 'babel-loader'
@@ -57,15 +58,21 @@ module.exports = (env) => {
         },
         {
           test: /\.(woff|woff2|eot|ttf|otf)$/,
-          use:[
-            'file-loader',
-          ]
+
+          loader: 'file-loader',
+          options: {
+            outputPath: './styles/fonts'
+          }
         },
         {
           test: /\.css$/,
           use: [
-            MiniCssExtractPlugin.loader,
-            'css-loader',
+            MiniCssExtractPlugin.loader, {
+              loader: 'css-loader',
+
+            }
+
+
           ],
         },
         {
