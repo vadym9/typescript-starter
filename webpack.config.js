@@ -1,12 +1,8 @@
-// NOT working
-// require("core-js/stable");
-// require("regenerator-runtime/runtime");
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const webpack = require('webpack')
-
-console.log(process.env.NODE_ENV);
 
 const hmr = (mode) => {
   return mode === "dev" ? { hotModuleRepl: new webpack.HotModuleReplacementPlugin() } : null;
@@ -23,13 +19,11 @@ const getDevServer = (mode) => {
 }
 
 const getDevTools = (mode) => {
-  return mode === "dev" ? { devtool: 'source-map' } : null;
+ 
+  return mode === "dev" ? { devtool: "source-map", } : null;
 }
 
 module.exports = (env) => {
-  console.log(env);
-  const { mode } = env;
-
   return {
     entry: './src/index.js',
     output: {
@@ -43,14 +37,9 @@ module.exports = (env) => {
           test: /\.(js|jsx)$/,
           exclude: /node_modules/,
           use: ['babel-loader', 'eslint-loader'],
-
-          // use: {
-
-          //     loader: 'babel-loader'
-          // }
         },
         {
-          test: /\.(png|svg|jpg|gif)$/,
+          test: /\.(png|svg|jpg|jpeg|gif)$/,
           loader: 'file-loader',
           options: {
             outputPath: './img'
@@ -71,8 +60,6 @@ module.exports = (env) => {
               loader: 'css-loader',
 
             }
-
-
           ],
         },
         {
@@ -82,15 +69,15 @@ module.exports = (env) => {
             MiniCssExtractPlugin.loader,
             {
               loader: 'css-loader',
-              options: { sourceMap: mode === "dev" ? true : false },
+              options: { sourceMap: env === "dev" },
             },
             {
               loader: 'postcss-loader',
-              options: { sourceMap: mode === "dev" ? true : false },
+              options: { sourceMap: env === "dev"},
             },
             {
               loader: 'sass-loader',
-              options: { sourceMap: mode === "dev" ? true : false },
+              options: { sourceMap: env === "dev" },
             },
 
           ],
@@ -102,9 +89,10 @@ module.exports = (env) => {
       extensions: ['*', '.js', '.jsx'],
     },
     plugins: [
+      new CleanWebpackPlugin(),
       hmr('dev').hotModuleRepl,
       new HtmlWebpackPlugin({
-        template: './src/index.html',
+        template: path.resolve('./src/index.html'),
       }),
 
       new MiniCssExtractPlugin({
@@ -113,9 +101,8 @@ module.exports = (env) => {
 
     ],
 
-    ...getDevServer(mode),
-    ...getDevTools(mode),
-
+    ...getDevServer(env),
+    ...getDevTools(env),
 
     optimization: {
       runtimeChunk: {
@@ -123,6 +110,4 @@ module.exports = (env) => {
       }
     }
   }
-
-
 };
