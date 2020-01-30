@@ -1,6 +1,6 @@
-import React from "react";
-import user from "../img/user.png";
-import bgLines from "../img/bg-lines.svg";
+import React from 'react';
+import user from '../img/user.png';
+import bgLines from '../img/bg-lines.svg';
 
 const bool = true;
 
