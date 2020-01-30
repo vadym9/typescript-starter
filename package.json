@@ -9,7 +9,7 @@
         "build": "webpack --env=dev --mode development",
         "build:prod": "webpack --env=prod --mode production",
         "eslint:fix": "eslint --fix ./src/",
-        "clean": "del-cli dist/*.* && del-cli dist/**/*.*",
+        "check": "eslint ./src/",
         "vadym": "node src/index.js"
     },
     "husky": {
