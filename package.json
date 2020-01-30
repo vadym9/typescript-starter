@@ -9,8 +9,7 @@
         "build": "webpack --env=dev --mode development",
         "build:prod": "webpack --env=prod --mode production",
         "eslint:fix": "eslint --fix ./src/",
-        "check": "eslint ./src/",
-        "vadym": "node src/index.js"
+        "check": "eslint ./src/"
     },
     "husky": {
         "hooks": {
