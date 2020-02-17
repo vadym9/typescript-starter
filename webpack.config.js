@@ -67,7 +67,7 @@ module.exports = env => {
                     test: /\.scss$/,
                     use: [
                         "style-loader",
-                        MiniCssExtractPlugin.loader,
+                        env === "dev" ? "style-loader" : MiniCssExtractPlugin.loader,
                         {
                             loader: "css-loader",
                             options: { sourceMap: env === "dev" }
