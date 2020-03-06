@@ -1,14 +1,8 @@
-@font-face {
-  font-family: "icomoon";
-  src: url("fonts/icomoon.eot?lfyq3x");
-  src: url("fonts/icomoon.eot?lfyq3x#iefix") format("embedded-opentype"),
-    url("fonts/icomoon.ttf?lfyq3x") format("truetype"),
-    url("fonts/icomoon.woff?lfyq3x") format("woff"),
-    url("fonts/icomoon.svg?lfyq3x#icomoon") format("svg");
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
-}
+@import './base/variables';
+@import './base/fonts';
+@import './base/buttons';
+@import './base/typography.scss';
+@import './base/common.scss';
 
 h1 {
   color: red;
