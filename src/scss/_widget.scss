@@ -1,0 +1,17 @@
+.widget {
+  background: darkgray;
+
+  .container{
+    .two-blocks{
+      background: white;
+      .block{
+        background: rgb(221, 220, 220);
+        width: 50%;
+        margin: 15px;
+        height: 500px;
+        border-radius: 10px;
+      }
+    }
+  }
+  
+}

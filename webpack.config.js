@@ -21,10 +21,13 @@ const getDevServer = (mode) => {
 const getDevTools = (mode) => (mode === 'dev' ? { devtool: 'source-map' } : null);
 
 module.exports = (env) => ({
-  entry: './src/index.js',
+  entry: {
+    critical: './src/critical.js',
+    app: './src/index.js'
+  },
   output: {
     path: path.join(__dirname, '/dist'),
-    filename: 'index_bundle.js'
+    filename: 'js/[name].min.js'
   },
 
   module: {
