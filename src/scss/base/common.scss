@@ -1,0 +1,25 @@
+body{
+  margin: 0px;
+  padding: 0px;
+}
+
+.container{
+  margin: 0 auto;
+  padding: 0 80px;
+}
+
+.flex{
+  display: flex;
+}
+
+.jcsb{
+  justify-content: space-between;
+}
+
+.ai-center{
+  align-items: center;
+}
+
+.jc-center{
+  justify-content: center;
+}

@@ -1,16 +1,33 @@
 import React from 'react';
-import user from '../img/user.png';
-import bgLines from '../img/bg-lines.svg';
-
-const bool = true;
 
 const App = () => (
-  <div>
-    <h1>My 84848HH</h1>
-    <img src={user} alt="user" />
-    <img src={bgLines} alt="bg-lines" />
-    {bool && <h1>123</h1>}
-  </div>
+  <>
+    <header>
+      <div className="container">
+        <div className="navbar flex">
+          <div className="item">
+            <a href="/#" className="link"><div className="link-item flex ai-center jc-center">Home</div></a>
+          </div>
+          <div className="item">
+            <a href="/#" className="link"><div className="link-item flex ai-center jc-center">Store</div></a>
+          </div>
+          <div className="item">
+            <a href="/#" className="link"><div className="link-item flex ai-center jc-center">Info</div></a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div>
+        body
+      </div>
+    </main>
+    <footer>
+      <div>
+        footer
+      </div>
+    </footer>
+  </>
 );
 
 export default App;
