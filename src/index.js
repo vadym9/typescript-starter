@@ -1,4 +1,3 @@
-/* eslint-disable no-param-reassign */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
@@ -7,26 +6,6 @@ import './scss/style.scss';
 ReactDOM.render(<App />, document.getElementById('app'));
 
 module.hot.accept();
-
-// const newImage = new Image();
-// newImage.src = lazy1;
-// const hero = document.getElementsByClassName('hero')[0];
-// console.log(hero);
-
-// if ('decode' in newImage) {
-//   newImage.decode().then(() => {
-//     console.log("decode");
-//     hero.appendChild(newImage)
-//     // hero.style.backgroundImage = `url(${newImage})`;
-//     // hero.style.backgroundRepeat = 'no-repeat';
-//     // hero.setAttribute('background-image', newImage);
-//     // hero.styles
-//   });
-// } else {
-//   console.log("else");
-
-//   hero.appendChild(newImage)
-// }
 
 document.addEventListener('DOMContentLoaded', () => {
   const lazyBackgrounds = [].slice.call(document.querySelectorAll('.hero-block'));

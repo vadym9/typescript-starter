@@ -9,6 +9,7 @@
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
         "comma-dangle": ["error", "never"],
         "quotes": [1, "single"],
-        "semi":[1, "always"]
+        "semi":[1, "always"],
+        "no-param-reassign": [1]
     }
 }
