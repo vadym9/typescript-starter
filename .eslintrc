@@ -10,6 +10,6 @@
         "comma-dangle": ["error", "never"],
         "quotes": [1, "single"],
         "semi":[1, "always"],
-        "no-param-reassign": [1]
+        "no-param-reassign": [0]
     }
 }

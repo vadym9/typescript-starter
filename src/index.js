@@ -1,9 +1,53 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
+import {
+  MemoryRouter, Route, Switch, Link
+} from 'react-router-dom';
+
+// import App from './components/App';
+import Home from './pages/Home/Home';
+import Posts from './pages/Posts/Posts';
+
 import './scss/style.scss';
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(
+  <MemoryRouter>
+    <header>
+      <div className="container">
+        <div className="navbar flex">
+          <div className="item">
+            <Link to="/" className="link">
+              <div className="link-item flex ai-center jc-center">
+                Home
+              </div>
+            </Link>
+          </div>
+          <div className="item">
+            <a href="/posts" className="link">
+              <div className="link-item flex ai-center jc-center">
+                Posts
+              </div>
+            </a>
+          </div>
+          <div className="item">
+            <a href="/#" className="link">
+              <div className="link-item flex ai-center jc-center">
+                Info
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <Switch>
+      <main>
+        <Route path="/" exact component={Home} />
+        <Route path="/posts" exact component={Posts} />
+      </main>
+    </Switch>
+  </MemoryRouter>,
+  document.getElementById('app')
+);
 
 module.hot.accept();
 

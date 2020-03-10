@@ -12,6 +12,7 @@ const getDevServer = (mode) => {
   const devS = {
     devServer: {
       contentBase: './dist',
+      historyApiFallback: true,
       hot: true
     }
   };
