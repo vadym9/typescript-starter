@@ -31,7 +31,7 @@ module.hot.accept();
 document.addEventListener('DOMContentLoaded', () => {
   const lazyBackgrounds = [].slice.call(document.querySelectorAll('.hero-block'));
 
-  if ("IntersectionObserver" in window) {
+  if ('IntersectionObserver' in window) {
     const lazyBackgroundObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -50,14 +50,14 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
   let lazyImages = [].slice.call(document.querySelectorAll('img.lazy'));
 
-  if ("IntersectionObserver" in window) {
+  if ('IntersectionObserver' in window) {
     const lazyImageObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const lazyImage = entry.target;
           lazyImage.src = lazyImage.dataset.src;
           lazyImage.srcset = lazyImage.dataset.srcset;
-          lazyImage.classList.remove("lazy");
+          lazyImage.classList.remove('lazy');
           lazyImageObserver.unobserve(lazyImage);
         }
       });
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if ((lazyImage.getBoundingClientRect().top <= window.innerHeight && lazyImage.getBoundingClientRect().bottom >= 0) && getComputedStyle(lazyImage).display !== 'none') {
               lazyImage.src = lazyImage.dataset.src;
               lazyImage.srcset = lazyImage.dataset.srcset;
-              lazyImage.classList.remove("lazy");
+              lazyImage.classList.remove('lazy');
 
               lazyImages = lazyImages.filter((image) => image !== lazyImage);
 
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
           active = false;
         }, 200);
       }
-    }
+    };
 
     document.addEventListener('scroll', lazyLoad);
     window.addEventListener('resize', lazyLoad);
