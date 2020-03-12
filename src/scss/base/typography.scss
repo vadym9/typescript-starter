@@ -1,0 +1,13 @@
+
+h1 {
+  color: red;
+  font-family: "icomoon";
+
+  &:before {
+    content: "\e901";
+  }
+}
+
+h2 {
+  color: red;
+}

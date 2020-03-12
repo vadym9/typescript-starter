@@ -1,0 +1,35 @@
+body{
+  margin: 0px;
+  padding: 0px;
+}
+
+.container{
+  margin: 0 auto;
+  padding: 0 80px;
+}
+
+.flex{
+  display: flex;
+}
+
+.jcsb{
+  justify-content: space-between;
+}
+
+.ai-center{
+  align-items: center;
+}
+
+.jc-center{
+  justify-content: center;
+}
+
+.loading{
+  position: absolute;
+  width: 50px;
+  background-color: indigo;
+  border-radius: 50px;
+  top: 50%;
+  left: 50%;
+  height: 50px;
+}

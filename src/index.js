@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
+import Routes from './components/Routes/Routes';
 import './scss/style.scss';
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<Routes />,
+  document.getElementById('app'));
 
 module.hot.accept();
