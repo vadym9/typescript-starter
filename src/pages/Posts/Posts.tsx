@@ -1,9 +1,9 @@
-import React from 'react';
+import * as React from "react";
 import '../../../node_modules/slick-carousel/slick/slick.css';
 import '../../../node_modules/slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
 
-const settings = {
+const settings: object = {
   dots: true,
   infinite: true,
   speed: 500,
