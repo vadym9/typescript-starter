@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from "react";
 import {
   MemoryRouter, Route, Switch
 } from 'react-router-dom';
@@ -12,7 +12,7 @@ const Routes = () => (
     <Navigation />
     <React.Suspense fallback={<div className="loading" />}>
       <Switch>
-        <Route path="/" component={lazyHome} exact />
+        <Route path="/" component={lazyHome} exact={true} />
         <Route path="/posts" component={lazyPosts} />
       </Switch>
     </React.Suspense>
