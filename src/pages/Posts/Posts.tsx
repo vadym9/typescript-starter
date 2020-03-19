@@ -3,7 +3,10 @@ import '../../../node_modules/slick-carousel/slick/slick.css';
 import '../../../node_modules/slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
 
-const settings: object = {
+import { SliderSettings } from '../../types';
+
+
+const settings: SliderSettings = {
   dots: true,
   infinite: true,
   speed: 500,

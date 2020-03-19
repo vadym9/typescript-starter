@@ -41,9 +41,11 @@ module.exports = (env) => ({
       {
         test: /\.ts(x?)$/,
         exclude: /node_modules/,
-        use: [{
-          loader: 'ts-loader'
-        }]
+        use: [
+          {
+            loader: 'ts-loader'
+          }
+        ]
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/,

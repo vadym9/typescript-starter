@@ -2,14 +2,12 @@ import * as React from "react";
 import lazy1 from "../../img/lazy-1.jpg";
 
 const lazyLoadingImages = () => {
-  let lazyImages: any[] = [].slice.call(
-    document.querySelectorAll("img.lazy")
-  );
+  let lazyImages: any[] = [].slice.call(document.querySelectorAll("img.lazy"));
 
   if ("IntersectionObserver" in window) {
     const lazyImageObserver = new IntersectionObserver(
-      (entries:any) => {
-        entries.forEach((entry:any) => {
+      (entries: any) => {
+        entries.forEach((entry: any) => {
           if (entry.isIntersecting) {
             const lazyImage = entry.target;
             lazyImage.src = lazyImage.dataset.src;
