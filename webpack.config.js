@@ -39,6 +39,15 @@ module.exports = (env) => ({
         use: ['babel-loader', 'eslint-loader']
       },
       {
+        test: /\.ts(x?)$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'ts-loader'
+          }
+        ]
+      },
+      {
         test: /\.(png|svg|jpg|jpeg|gif)$/,
         loader: 'file-loader',
         options: {
@@ -84,7 +93,7 @@ module.exports = (env) => ({
     ]
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx']
+    extensions: ['*', '.js', '.jsx', '.ts', '.tsx']
   },
   plugins: [
     new CleanWebpackPlugin(),
